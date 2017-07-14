@@ -113,6 +113,7 @@ brew update
 brew bundle --file=- <<EOF
 tap "thoughtbot/formulae"
 tap "homebrew/services"
+tap "neovim/neovim"
 
 # Unix
 brew "ctags"
@@ -122,7 +123,6 @@ brew "rcm"
 brew "reattach-to-user-namespace"
 brew "the_silver_searcher"
 brew "tmux"
-brew "vim"
 brew "watchman"
 brew "zsh"
 
@@ -149,7 +149,16 @@ brew "yarn"
 # Databases
 brew "postgres", restart_service: true
 brew "redis", restart_service: true
+
+# Text Editors
+brew "vim"
+# has to be after python and python3 has been installed. See: http://ricostacruz.com/til/neovim-with-python-on-osx
+brew "neovim"
 EOF
+
+# brew cask installations
+fancy_echo "Installing Sublime Text ..."
+brew cask install sublime-text
 
 fancy_echo "Symlink qmake binary to /usr/local/bin for Capybara Webkit..."
 brew unlink qt@5.5
