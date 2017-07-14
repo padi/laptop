@@ -157,8 +157,30 @@ brew "neovim"
 EOF
 
 # brew cask installations
-fancy_echo "Installing Sublime Text ..."
+fancy_echo "Starting `brew cask` Installations..."
 brew cask install sublime-text
+brew cask install keepassx
+brew cask install spectacle
+brew cask install gitx
+brew cask install google-chrome
+brew cask install vlc
+brew cask install android-file-transfer
+brew cask install flux
+brew cask install sequel-pro
+brew cask install transmission
+brew cask install tomighty
+brew cask install telegram
+brew cask install viber
+brew cask install psequel
+brew cask install limechat
+brew cask install macdown
+# Karabiner doesn't work with macos sierra, use Karabiner Elements for now
+# see: https://github.com/tekezo/Karabiner-Elements/blob/master/README.md
+brew cask install karabiner-elements
+# Error: Download failed on Cask 'spotify' with message: Download failed: https://download.scdn.co/Spotify.dmg
+# The incomplete download is cached at /Users/hawk/Library/Caches/Homebrew/Cask/spotify--latest.dmg.incomplete
+# Error: Install incomplete.
+# brew cask install spotify
 
 fancy_echo "Symlink qmake binary to /usr/local/bin for Capybara Webkit..."
 brew unlink qt@5.5
